@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Movie Finder
+
+A modern movie discovery web app built with Next.js that helps users search movies, browse them page by page, open detailed information, and save favorites using browser storage.
+
+## Features
+
+- Browse popular movies with manual pagination
+- Search movies by title in real time
+- View movie details in a modal overlay
+- Save or remove favorites with local storage persistence
+- Responsive layout for desktop and mobile screens
+- Loading, error, and no-results states
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- TMDB API
+
+## Screenshots
+
+### Home page
+
+![Movie Finder home page](public/screenshots/home-dashboard.png)
+
+### Movie details modal
+
+![Movie details modal](public/screenshots/movie-modal.png)
+
+### Favorites state
+
+![Favorites preview](public/screenshots/favorites-preview.svg)
+
+## API Used
+
+This project uses the TMDB API for movie data.
+
+## Environment Variables
+
+Create a `.env.local` file in the project root and add:
+
+```bash
+NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key_here
+```
 
 ## Getting Started
 
-First, run the development server:
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+app/
+  globals.css
+  layout.tsx
+  page.tsx
+public/
+  screenshots/
+    home-dashboard.png
+    movie-modal.svg
+    favorites-preview.png
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project can be deployed easily on Vercel or Netlify.
 
-## Deploy on Vercel
+## Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Favorites are stored in `localStorage` so they remain after a page refresh.
+- The app uses manual pagination with exactly 12 results per page.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
